@@ -1,0 +1,37 @@
+import java.io.*;
+import java.util.*;
+class anagram
+{
+ public static void main(String[] a) throws IOException
+ {
+   String str1,str2;
+   int i,j,index,flag=1;
+   char ch;
+   BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+   str1=br.readLine().toUpperCase();
+   str2=br.readLine().toUpperCase();
+   char[]temp=str1.toCharArray();
+   char[]temp1=str2.toCharArray();
+   Arrays.sort(temp);
+   Arrays.sort(temp1);
+   if(str1.length()==str2.length()&&str1.equals(str2)!=true)
+   {
+   	 for(i=0;i<str1.length();i++)
+   	 {
+   	 	if(temp[i]!=temp1[i])
+   	 	{
+   	 		flag=0;
+   	 		break;
+   	 	}
+   	 }
+   }
+   else
+   {
+   	 flag=0;
+   }
+   if(flag==1)
+    System.out.println("YES");
+   else
+   System.out.println("NO");
+ }
+}
