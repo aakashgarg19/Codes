@@ -1,0 +1,23 @@
+import java.io.*;
+class repeat
+{
+ public static void main(String[] a) throws IOException
+ {
+   BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+   String str1,str2;
+   int index,len;
+   char ch;
+   str1=br.readLine();   
+   len=str1.length();
+   for(int i=0;i<str1.length();i++)
+   {
+     ch=str1.charAt(i);
+     str2=str1.substring(i+1,len);  
+     index=str2.indexOf(ch);
+     if(index==-1)
+     {
+       System.out.println(ch);
+       break;
+     }
+   }
+ }  
